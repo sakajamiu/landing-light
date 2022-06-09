@@ -12,8 +12,8 @@ import styles from './index.module.css'
 
 
 export const Body = () => {
-  const [cardNumber, setCardNumber ] = useState('')
-  const [ expiryDate , setExpiryDate] = useState('')
+  const [cardNumber, setCardNumber ] = useState('0000 0000 0000 0000')
+  const [ expiryDate , setExpiryDate] = useState('01/09')
   const [cvc, setCvc] = useState('')
   const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps } = usePaymentInputs()
   const { erroredInputs, touchedInputs } = meta
@@ -26,7 +26,12 @@ export const Body = () => {
   const handleChangeCVC = (event) => {
     setCvc(event.target.value)
   }
-
+  const cardNumberFocus = () => {
+    setCardNumber(' ')
+  }
+  const expiryDateFocus = () => {
+    setExpiryDate(' ')
+  }
   return(
     <Container className={styles.container}>
       <Row className={styles.row}>
@@ -69,7 +74,7 @@ export const Body = () => {
                 <Form.Label>Credit card number</Form.Label>
                 <Form.Control
                   { ...getCardNumberProps( { onChange: handleChangeCardNumber })}
-                  placeholder= "0000 0000 0000 0000"
+                  onFocusCapture={cardNumberFocus}
                   isInvalid={touchedInputs.cardNumber && erroredInputs.cardNumber}
                   value = {cardNumber}
                 />
@@ -80,7 +85,7 @@ export const Body = () => {
                 <Form.Control
                   {...getExpiryDateProps({ onChange: handleChangeExpiryDate })}
                   isInvalid={touchedInputs.expiryDate && erroredInputs.expiryDate}
-                  placeholder="01/19"
+                  onFocusCapture={expiryDateFocus}
                   value = {expiryDate}
                 />
                 <Form.Control.Feedback type="invalid">{erroredInputs.expiryDate}</Form.Control.Feedback>

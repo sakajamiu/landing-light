@@ -1,0 +1,33 @@
+.div{
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.p:first-child{
+    margin-top: 25px;
+}
+.p{
+    color:#000000;
+    font-weight: 600;
+    font-size: 20px;
+}
+.span{
+    float: right
+}
+.spanP{
+    font-size: 20px;
+    font-weight: 600;
+    color: gray;
+}
+
+.button{
+    padding: 15px 50px !important;
+    font-size: 20px !important;
+}
+.spanButton{
+    float: right;
+    font-weight: bolder !important;
+    color: #000000;
+    font-size: 20px;
+}

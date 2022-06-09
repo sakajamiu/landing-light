@@ -1,0 +1,1 @@
+export { landingLight as default } from './landingLight'

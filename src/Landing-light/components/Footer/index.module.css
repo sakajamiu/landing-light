@@ -31,3 +31,18 @@
     color: #000000;
     font-size: 20px;
 }
+
+@media screen and (max-width: 780px) {
+    .p{
+        font-size: 14px
+    }
+    .spanP{
+        font-size: 14px;
+    }
+    .button{
+        font-size: 14px !important; 
+        padding: 10px 25px !important;
+    }.spanButton{
+        font-size: 14px;
+    }
+}
